@@ -1,4 +1,4 @@
-# Bad_Words: The FlexWord Blocklist
+# The FlexWord Blocklist
 
 > "It's a PG-13 world; I'm just living in it."
 
