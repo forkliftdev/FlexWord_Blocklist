@@ -1,0 +1,79 @@
+Error on the 6-letter file. want to look at later
+
+cw@Chriss-MacBook-Pro FlexWord_Blocklist % ls
+By_Length       Dart_Scripts    LICENSE         Raw_Bad_Words   README.md
+cw@Chriss-MacBook-Pro FlexWord_Blocklist % cd By_Length
+cw@Chriss-MacBook-Pro By_Length % dart run merge_file_gemini.dart
+Welcome to the File Merger!
+Enter name of first file:
+3_BW.txt
+Enter name of second file:
+3_OG.txt
+Enter name of output file:
+3_Block.txt
+File 1 lines: 8
+File 2 lines: 4
+Duplicates found: 1
+Final merged lines: 11
+Merged file written to: 3_Block.txt
+cw@Chriss-MacBook-Pro By_Length % dart run merge_file_gemini.dart
+Welcome to the File Merger!
+Enter name of first file:
+4_BW.txt
+Enter name of second file:
+4_OG.txt
+Enter name of output file:
+4_Block.txt
+File 1 lines: 40
+File 2 lines: 19
+Duplicates found: 7
+Final merged lines: 52
+Merged file written to: 4_Block.txt
+cw@Chriss-MacBook-Pro By_Length % dart run merge_file_gemini.dart
+Welcome to the File Merger!
+Enter name of first file:
+5_OG.txt
+Enter name of second file:
+5_BW.txt
+Enter name of output file:
+5_Block.txt
+File 1 lines: 33
+File 2 lines: 35
+Duplicates found: 5
+Final merged lines: 63
+Merged file written to: 5_Block.txt
+cw@Chriss-MacBook-Pro By_Length % dart run merge_file_gemini.dart
+Welcome to the File Merger!
+Enter name of first file:
+6_OG.txt
+Enter name of second file:
+6.BW.txt
+Enter name of output file:
+6_Block.txt
+Unhandled exception:
+PathNotFoundException: Cannot open file, path = '6.BW.txt' (OS Error: No such file or directory, errno = 2)
+#0      _checkForErrorResponse (dart:io/common.dart:58:9)
+#1      _File.open.<anonymous closure> (dart:io/file_impl.dart:442:7)
+<asynchronous suspension>
+#2      _File.readAsBytes.<anonymous closure> (dart:io/file_impl.dart:649:24)
+<asynchronous suspension>
+#3      _File.readAsString (dart:io/file_impl.dart:716:18)
+<asynchronous suspension>
+#4      LineSplitter.convert (dart:convert/line_splitter.dart:52:3)
+<asynchronous suspension>
+#5      main (file:///Users/cw/Development/FlexWord_Blocklist/By_Length/merge_file_gemini.dart:29:18)
+<asynchronous suspension>
+cw@Chriss-MacBook-Pro By_Length % dart run merge_file_gemini.dart
+Welcome to the File Merger!
+Enter name of first file:
+6_BW.txt
+Enter name of second file:
+6_OG.txt
+Enter name of output file:
+6_Block.txt
+File 1 lines: 46
+File 2 lines: 18
+Duplicates found: 6
+Final merged lines: 58
+Merged file written to: 6_Block.txt
+cw@Chriss-MacBook-Pro By_Length % 

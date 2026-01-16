@@ -1,29 +1,30 @@
 import 'dart:io';
-//This would make a good video tutorial on file handling in Dart var names
+
 Future<void> main() async {
 
   print("Welcome to the File Merger!");
 
   stdout.writeln('Enter name of first file:');
-  final file1 = stdin.readLineSync();
+  final name1 = stdin.readLineSync();
 
   stdout.writeln('Enter name of second file:');
-  final file2 = stdin.readLineSync();
+  final name2 = stdin.readLineSync();
 
   stdout.writeln('Enter name of output file:');
-  final outputFile = stdin.readLineSync();
+  final outputName = stdin.readLineSync();
 
-  if (file1 == null || file2 == null || outputFile == null) {
+  // 1. Check for nulls (Safety first!)
+  if (name1 == null || name2 == null || outputName == null) {
     print('Invalid input. Please provide valid file names.');
     return;
   }
- 
-  final file1 = File(file1);
-  final file2 = File(file2);
-  final outputFile = File(outputFile);
 
+  // 2. Create actual File objects using the names
+  final file1 = File(name1);
+  final file2 = File(name2);
+  final outputFile = File(outputName);
 
-  // Read files
+  // Read files (Now this works because file1 is a File object)
   final lines1 = await file1.readAsLines();
   final lines2 = await file2.readAsLines();
 
@@ -51,5 +52,7 @@ Future<void> main() async {
   print('File 2 lines: $count2');
   print('Duplicates found: $duplicateCount');
   print('Final merged lines: ${mergedSet.length}');
+  
+  // .path is a property of a File object, so this works now too
   print('Merged file written to: ${outputFile.path}');
 }
